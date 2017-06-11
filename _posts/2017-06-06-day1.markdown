@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "First Day!"
+date:   2017-06-06
+---
+Exciting first day at work!  
+I was asked to go through the modules on [RubyMonk](https://rubymonk.com/) and familiarise myself with the Ruby programming language.
+
+Coming from a C++ background, I had my fair share of troubles getting used to nuances of the language such as accidently using `{}` when Ruby used `end` indentifier to enclose and separate blocks.
+
+### The `if`-`else` construct in Ruby was of the form:
+``` ruby
+if condition
+  # snippet for brevity
+elsif condition
+  # snippet for brevity
+end
+```
+Looks fine on the first look, eh? Look again, it's `elsif`, not `elseif`!  
+It was slightly confusing and made me wonder why the ruby devs had it like that ([they do know how to spell :P ?](https://stackoverflow.com/questions/13550407/does-elseif-still-exist#comment50635437_1355042)) but after reading [this thread on ruby-forum](https://www.ruby-forum.com/topic/100350) and the response of [Yukihiro Matsumoto](https://en.wikipedia.org/wiki/Yukihiro_Matsumoto), the chief designer of the Ruby programming language, I understood the reasoning behind the decision.  
+>Correct or not, I chose 'elsif' as the shortest correct pronounceable word for 'else if'  
+-Yukihiro Matsumoto.
+
+
+### Calling Ruby methods with parameters, consider:
+``` ruby
+def method(param)
+  # snippet for brevity
+end
+```
+When calling the method you can use:
+```ruby
+method(param) #works
+```
+or:
+```ruby
+method param #works too
+```
+but using the following causes an error:
+```ruby
+method (param) #causes error!
+```
+We can either use `space without the braces` or `braces without the space` but **not** both.
+
+
+### No need of Return statement!
+The fact that Ruby **automatically returns** the last evaluated expression from a method pleasantly surprised me and made me wonder why other languages didn't have it as well!
+
+I was able to finish one module, [Ruby Primer](https://rubymonk.com/learning/books/1-ruby-primer) and start the next module, [Ruby Primer: Ascent](https://rubymonk.com/learning/books/4-ruby-primer-ascent) by the the end of day.
+
+Signing off,  
+Puneet Goyal
