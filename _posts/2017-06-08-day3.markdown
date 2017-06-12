@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Day 3"
+date:   2017-06-08
+---
+Starting with **Ruby on Rails** following the [guide](http://guides.rubyonrails.org/getting_started.html) to create a sample blog app.
+
+### Rails and Routes
+`./welcome/index` calls the welcome controller's index method whereas `./articles/` calls the articles controller's index method.  
+This is can be understood by checking the `routes.rb` file:
+```ruby
+Rails.application.routes.draw do
+  get 'welcome/index', to: 'welcome#index'
+  resources :articles
+end
+```
+The `resources :articles` automatically routes `articles#index` to `./articles/`.  
+We can modify the welcome routes as follows to make it `./welcome/` as follows:
+```ruby
+Rails.application.routes.draw do
+  get 'welcome', to: 'welcome#index'
+  resources :articles
+end
+```
+### [`form_for`](http://api.rubyonrails.org/v5.1.0/classes/ActionView/Helpers/FormHelper.html#method-i-form_for) to create forms
+The following two forms:
+```ruby
+<%= form_for :article, url: articles_path do |f| %>
+```
+and:
+```ruby
+<%= form_for @article do |f| %>
+```
+have the same functionality because `@articles` redirects to `articles_path`'s' url itself.  
+Refer: [Ruby - Difference between :variable and @variable](https://stackoverflow.com/questions/7211724/ruby-difference-between-variable-and-variable)
+
+Signing off,  
+Puneet Goyal
