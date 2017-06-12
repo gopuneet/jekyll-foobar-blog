@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Day 4"
+date:   2017-06-09
+---
+Continuing with **Ruby on Rails** to create a sample blog app.
+
+`:variable` is a **symbol**, ie, an immutable string in Ruby.
+### Ways of signifying a Hash
+  
+* `:variable => "something"` is a Key/Value pair.
+* `variable: "something"` is also a Key/Value pair!
+
+### Q. Difference between:
+
+* `http_basic_authenticate_with`
+* `authenticate_with_http_basic`
+* `authenticate_or_request_with_http_basic?`
+
+### Basic Authentication from following the [guide](http://guides.rubyonrails.org/getting_started.html)
+Basic Authentication has following code in ArticlesController:
+```ruby
+class ArticlesController < ApplicationController
+ 
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+ 
+  def index
+    @articles = Article.all
+  end
+ 
+  # snippet for brevity
+```
+This makes the user provide Authentication twice, first when clicking new/edit article (method `new`/`create` is called) and a second time after clicking create in the `articles/new` or `articles/edit` (method `create` is called).  
+The `except:` part should have `:create` too like:
+```ruby
+class ArticlesController < ApplicationController
+
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show, :create]
+
+  def index
+    @articles = Article.all
+  end
+
+  # snippet for brevity
+```
+After that the user is asked to enter name/password when creating, editing, deleting article only once during the process.
+
+Signing off,  
+Puneet Goyal
