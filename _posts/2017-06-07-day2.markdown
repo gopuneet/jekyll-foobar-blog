@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Day 2"
+date:   2017-06-07
+---
+Continued with the second module [Ruby Primer: Ascent](https://rubymonk.com/learning/books/4-ruby-primer-ascent) on day 2 which delved deeper into the intricacies of the language.
+
+### `attr_accessor` in Ruby
+It implements both `attr_reader` and `attr_writer` for the same variable.  
+
+It is also important to note that using `attr_accessor` can be harmful:  
+[Why getter and setter methods are evil](http://www.javaworld.com/article/2073723/core-java/why-getter-and-setter-methods-are-evil.html)  
+[Getters/Setters. Evil. Period.](http://www.yegor256.com/2014/09/16/getters-and-setters-are-evil.html)
+
+
+### Classes and three types of variables:  
+#### Instance variables `@iv`
+They are bound to an instance of a class and together forms what we call the state of an object. Every instance of a class has a different set of instance variables. 
+#### Class variables `@@cv`
+Class variables can be used to store data that belongs to a class, but not to its instances.
+#### Class instance variables `@civ` 
+Even though the notation is confusingly similar to a normal instance variable, the difference here is that `@civ` is initialized directly in the class body and is accessed only from class methods.  
+
+## Setting up the workstation:  
+Everything went smoothly until MongoDB. It took around an hour and various stackoverflow fixes to try to make it work with the Ubuntu 16.10 on my system.
+It finally worked but all the various fixes left many duplicate and redundant files on the system and it stopped working after leaving from work.
+I removed everything and did a fresh install while documenting every step.
+
+### [Correct and working method to install MongoDB on Ubuntu 16.04+](https://gist.github.com/puneet97/5cdd8d8a8b42d0b681bc01e75c6e4406) [embedded below too]
+<script src="https://gist.github.com/puneet97/5cdd8d8a8b42d0b681bc01e75c6e4406.js"></script>
+
+Signing off,  
+Puneet Goyal
